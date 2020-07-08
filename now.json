@@ -1,0 +1,28 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "index.js",
+            "use": "@now/node-server"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/index.js"
+        }
+    ],
+    "env": {
+        "NODE_ENV": "production",
+        "DB_USER": "@node-ecommerce-db-user",
+        "DB_PASSWORD": "@node-ecommerce-db-password",
+        "DB_HOST": "@node-ecommerce-db-host",
+        "DB_PORT": "",
+        "DB_NAME": "@node-ecommerce-db-name",
+        "SENTRY_DSN": "@node-ecommerce-dsn",
+        "AUTH_ADMIN_USERNAME": "@node-ecommerce-auth-admin-username",
+        "AUTH_ADMIN_PASSWORD": "@node-ecommerce-auth-admin-password",
+        "AUTH_ADMIN_EMAIL": "@node-ecommerce-auth-admin-email",
+        "AUTH_JWT_SECRET": "@node-ecommerce-auth-jwt-secret"
+    }
+}

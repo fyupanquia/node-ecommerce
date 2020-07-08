@@ -7,6 +7,7 @@ const boom = require("@hapi/boom");
 const slash = require("express-slash");
 const authApiRouter = require("./routes/api/auth");
 const debug = require("debug")("app:server");
+const helmet = require("helmet");
 
 const {
   logErrors,
@@ -19,6 +20,7 @@ const {
 const app = express();
 
 // middlewares
+app.use(helmet());
 app.use(express.json());
 
 // static files
