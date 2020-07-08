@@ -6,6 +6,7 @@ const isRequestAjaxOrApi = require("./utils/isRequestAjaxOrApi");
 const boom = require("@hapi/boom");
 const slash = require("express-slash");
 const authApiRouter = require("./routes/api/auth");
+const debug = require("debug")("app:server");
 
 const {
   logErrors,
@@ -25,7 +26,6 @@ app.use("/static", express.static(path.join(__dirname, "public")));
 
 //slash
 app.enable("strict routing");
-app.use(slash());
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -33,6 +33,7 @@ app.set("view engine", "pug");
 
 // routes
 app.use("/products", productsRouter);
+app.use(slash());
 //app.use("/api/products", productsApiRouter);
 productsApiRouter(app)
 app.use("/api/auth", authApiRouter);
@@ -64,5 +65,5 @@ app.use(errorHandler);
 
 // server
 const server = app.listen(8000, function () {
-  console.log(`Listening http://localhost:${server.address().port}`);
+  debug(`Listening http://localhost:${server.address().port}`);
 });

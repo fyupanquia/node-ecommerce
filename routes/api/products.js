@@ -58,7 +58,6 @@ function productsApi(app) {
     validation(createProductSchema),
     async function (req, res, next) {
       const { body: product } = req;
-      console.log(product);
       try {
         const Createdproduct = await productService.createProduct({ product });
 
