@@ -38,7 +38,7 @@
     },
     "devDependencies": {
         "clean-css-cli": "^4.3.0",
-        "mocha": "^8.0.1",
+        "mocha": "^8.4.0",
         "nodemon": "^1.18.6",
         "now": "^19.1.1",
         "nyc": "^15.1.0",
